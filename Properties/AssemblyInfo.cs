@@ -35,5 +35,5 @@ using MelonLoader;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: MelonInfo(typeof(HPScaler.Scaler), "Scaler", "1.0.0", "Lenny")]
+[assembly: MelonInfo(typeof(HPScaler.Scaler), "Scaler", "1.0.1", "Lenny")]
 [assembly: MelonGame("Eek", "House Party")]

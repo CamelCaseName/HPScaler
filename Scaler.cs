@@ -16,10 +16,10 @@ namespace HPScaler
         {
             mainSettings = MelonPreferences.CreateCategory("Butt/Chest slider settings");
 
-            ChestSizeMin = mainSettings.CreateEntry<float>("ChestSizeMin", 0.5f);
-            ChestSizeMax = mainSettings.CreateEntry<float>("ChestSizeMax", 2f);
-            ButtSizeMin = mainSettings.CreateEntry<float>("ButtSizeMin", 0.0f);
-            ButtSizeMax = mainSettings.CreateEntry<float>("ButtSizeMax", 5f);
+            ChestSizeMin = mainSettings.CreateEntry("ChestSizeMin", 0.5f);
+            ChestSizeMax = mainSettings.CreateEntry("ChestSizeMax", 2f);
+            ButtSizeMin = mainSettings.CreateEntry("ButtSizeMin", 0.0f);
+            ButtSizeMax = mainSettings.CreateEntry("ButtSizeMax", 5f);
         }
 
         public override void OnSceneWasLoaded(int buildIndex, string sceneName)
@@ -27,8 +27,8 @@ namespace HPScaler
             if (sceneName != "MainMenu")
                 return;
 
-            var buttSlider = GameObject.FindObjectsOfType<GameObject>(true).First(p => p.name == "ButtSlider")!.GetComponentInChildren<Slider>();
-            var chestSlider = GameObject.FindObjectsOfType<GameObject>(true).First(p => p.name == "ChestSlider").GetComponentInChildren<Slider>();
+            var buttSlider = GameObject.Find("ButtSlider")!.GetComponentInChildren<Slider>();
+            var chestSlider = GameObject.Find("ChestSlider").GetComponentInChildren<Slider>();
             buttSlider.minValue = ButtSizeMin!.Value;
             buttSlider.maxValue = ButtSizeMax!.Value;
             chestSlider.minValue = ChestSizeMin!.Value;
